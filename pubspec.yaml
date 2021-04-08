@@ -1,8 +1,8 @@
 name: joymo_app_upgrade
 description: A new flutter plugin project.
 version: 1.0.4
-author:
-homepage:
+author: matt
+homepage: https://github.com/taoveweb/joymo_app_upgrate
 
 environment:
   sdk: '>=2.7.0 <3.0.0'
