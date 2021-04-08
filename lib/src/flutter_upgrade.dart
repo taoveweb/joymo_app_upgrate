@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:joymo_app_upgrade/joymo_app_upgrade.dart';
-import 'package:package_info/package_info.dart';
 
 class FlutterUpgrade {
   static const MethodChannel _channel =
@@ -11,12 +10,20 @@ class FlutterUpgrade {
   ///
   /// 获取app信息
   ///
+  // static Future<AppInfo> get appInfo async {
+  //   PackageInfo packageInfo = await PackageInfo.fromPlatform();
+  //   return AppInfo(
+  //       versionName: packageInfo.appName,
+  //       versionCode: packageInfo.version,
+  //       packageName: packageInfo.packageName);
+  // }
+
   static Future<AppInfo> get appInfo async {
-    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    var result = await _channel.invokeMethod('getAppInfo');
     return AppInfo(
-        versionName: packageInfo.appName,
-        versionCode: packageInfo.version,
-        packageName: packageInfo.packageName);
+        versionName: result['versionName'],
+        versionCode: result['versionCode'],
+        packageName: result['packageName']);
   }
 
   ///

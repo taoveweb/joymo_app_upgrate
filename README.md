@@ -4,7 +4,7 @@
 
 ```
 dependencies:
-  joymo_app_upgrade: ^1.0.4
+  joymo_app_upgrade: ^1.0.5
 ```
 
 2、执行 flutter 命令获取包：
