@@ -184,7 +184,7 @@ class _SimpleAppUpgradeWidget extends State<SimpleAppUpgradeWidget> {
   _buildAppInfo() {
     return Container(
         padding: EdgeInsets.only(left: 15, right: 15, bottom: 30),
-        height: 200,
+        height: 150,
         child: ListView(
           children: widget.contents.map((f) {
             return Text(
@@ -212,6 +212,11 @@ class _SimpleAppUpgradeWidget extends State<SimpleAppUpgradeWidget> {
                 : Expanded(
                     child: _buildCancelActionButton(),
                   ),
+            Container(
+                height: 45,
+                child: VerticalDivider(
+                  color: Colors.grey,
+                )),
             Expanded(
               child: _buildOkActionButton(),
             ),
@@ -277,7 +282,7 @@ class _SimpleAppUpgradeWidget extends State<SimpleAppUpgradeWidget> {
           height: 45,
           alignment: Alignment.center,
           child: Text(widget.okText ?? '立即体验',
-              style: widget.okTextStyle ?? TextStyle(color: Colors.white)),
+              style: widget.okTextStyle ?? TextStyle(color: Colors.green)),
         ),
         onTap: () {
           _clickOk();
